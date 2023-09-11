@@ -1,21 +1,7 @@
-import fastify from 'fastify';
+import app from './app';
 
-const app = fastify();
+const PORT = process.env.PORT || 3000;
 
-app.get('/', async (request, reply) => {
-  return 'Hello World';
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
 });
-
-app.listen(
-  {
-    port: 3000,
-    host: '0.0.0.0',
-  },
-  (err, address) => {
-    if (err) {
-      console.error(err);
-      process.exit(1);
-    }
-    console.log(`Server listening at ${address}`);
-  },
-);
