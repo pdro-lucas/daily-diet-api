@@ -1,12 +1,37 @@
 {
   "name": "daily-diet-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "This project is a daily diet control, developed in the challenge of the ignite of @Rocketseat",
+  "main": "src/server.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx watch src/server.ts --fix",
+    "knex": "node --no-warnings --loader tsx ./node_modules/knex/bin/cli.js",
+    "build": "tsup src --out-dir build",
+    "lint": "eslint src --ext .ts",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cookie": "^9.0.4",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.23.0",
+    "knex": "^2.5.1",
+    "pg": "^8.11.3",
+    "zod": "^3.22.2"
+  },
+  "devDependencies": {
+    "@rocketseat/eslint-config": "^2.1.0",
+    "@types/node": "^20.6.0",
+    "@types/supertest": "^2.0.12",
+    "eslint": "^8.49.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "sqlite3": "^5.1.6",
+    "supertest": "^6.3.3",
+    "tsup": "^7.2.0",
+    "tsx": "^3.12.8",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.4"
+  }
 }
