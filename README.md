@@ -8,7 +8,7 @@ Nesse desafio desenvolveremos uma API para controle de dieta diária, a Daily Di
 
 - [x] Deve ser possível criar um usuário
 - [x] Deve ser possível identificar o usuário entre as requisições
-- [ ] Deve ser possível registrar uma refeição feita, com as seguintes informações:
+- [x] Deve ser possível registrar uma refeição feita, com as seguintes informações:
 
   _As refeições devem ser relacionadas a um usuário._
 
@@ -17,10 +17,10 @@ Nesse desafio desenvolveremos uma API para controle de dieta diária, a Daily Di
   - Data e Hora
   - Está dentro ou não da dieta
 
-- [ ] Deve ser possível editar uma refeição, podendo alterar todos os dados acima
-- [ ] Deve ser possível apagar uma refeição
-- [ ] Deve ser possível listar todas as refeições de um usuário
-- [ ] Deve ser possível visualizar uma única refeição
+- [x] Deve ser possível editar uma refeição, podendo alterar todos os dados acima
+- [x] Deve ser possível apagar uma refeição
+- [x] Deve ser possível listar todas as refeições de um usuário
+- [x] Deve ser possível visualizar uma única refeição
 - [ ] Deve ser possível recuperar as métricas de um usuário
   - Quantidade total de refeições registradas
   - Quantidade total de refeições dentro da dieta
@@ -35,3 +35,20 @@ Nesse desafio desenvolveremos uma API para controle de dieta diária, a Daily Di
 Por isso, deixamos abaixo o link para o layout da aplicação que utilizaria essa API.
 
 [Daily Diet](https://www.figma.com/community/file/1218573349379609244)
+
+Quantidade total de refeições registradas:
+
+Rota: GET /api/user/metrics/total-meals
+Descrição: Essa rota permite que um usuário obtenha a quantidade total de refeições registradas.
+Quantidade total de refeições dentro da dieta:
+
+Rota: GET /api/user/metrics/diet-meals
+Descrição: Essa rota permite que um usuário obtenha a quantidade total de refeições registradas que estão dentro da dieta.
+Quantidade total de refeições fora da dieta:
+
+Rota: GET /api/user/metrics/non-diet-meals
+Descrição: Essa rota permite que um usuário obtenha a quantidade total de refeições registradas que estão fora da dieta.
+Melhor sequência de refeições dentro da dieta:
+
+Rota: GET /api/user/metrics/best-diet-sequence
+Descrição: Essa rota permite que um usuário obtenha informações sobre a melhor sequência de refeições dentro da dieta, como quais refeições devem ser consumidas em ordem para atender aos objetivos da dieta.
