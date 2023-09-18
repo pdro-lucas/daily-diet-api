@@ -6,8 +6,8 @@ Nesse desafio desenvolveremos uma API para controle de dieta diária, a Daily Di
 
 ### Regras da aplicação
 
-- [ ] Deve ser possível criar um usuário
-- [ ] Deve ser possível identificar o usuário entre as requisições
+- [x] Deve ser possível criar um usuário
+- [x] Deve ser possível identificar o usuário entre as requisições
 - [ ] Deve ser possível registrar uma refeição feita, com as seguintes informações:
 
   _As refeições devem ser relacionadas a um usuário._

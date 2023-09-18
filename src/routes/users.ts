@@ -35,4 +35,63 @@ export async function usersRoutes(app: FastifyInstance) {
       return reply.status(201).send(response[0]);
     },
   );
+
+  app.get(
+    '/',
+    { preHandler: [checkIfSessionIdExists] },
+    async (request, reply) => {
+      const response = await knex('users').select(
+        'id',
+        'name',
+        'email',
+        'created_at',
+      );
+
+      return reply.status(200).send(response);
+    },
+  );
+
+  app.get(
+    '/:id',
+    { preHandler: [checkIfSessionIdExists] },
+    async (request, reply) => {
+      const paramsSchema = z.object({
+        id: z.string(),
+      });
+
+      const { id } = paramsSchema.parse(request.params);
+
+      const response = await knex('users')
+        .select('id', 'name', 'email', 'created_at')
+        .where({ id });
+
+      if (response.length === 0) {
+        return reply.status(404).send({ message: 'User not found' });
+      }
+
+      return reply.status(200).send(response[0]);
+    },
+  );
+
+  app.delete(
+    '/:id',
+    { preHandler: [checkIfSessionIdExists] },
+    async (request, reply) => {
+      const paramsSchema = z.object({
+        id: z.string(),
+      });
+
+      const { id } = paramsSchema.parse(request.params);
+
+      const response = await knex('users').where({ id }).delete();
+
+      if (response === 0) {
+        return reply.status(404).send({ message: 'User not found' });
+      }
+
+      await knex('sessions').where({ user_id: id }).delete();
+
+      return reply.status(204).send();
+    },
+  );
 }

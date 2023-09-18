@@ -1,7 +1,7 @@
 import fastify from 'fastify';
 import { usersRoutes } from './routes/users';
 import cookie from '@fastify/cookie';
-import { LoginRoute } from './routes/login';
+import { LoginRoute } from './routes/auth';
 
 const app = fastify();
 

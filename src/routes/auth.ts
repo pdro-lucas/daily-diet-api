@@ -44,4 +44,20 @@ export async function LoginRoute(app: FastifyInstance) {
 
     return reply.status(201).send(response[0]);
   });
+
+  app.post('/logout', async (request, reply) => {
+    const sessionId = request.cookies.sessionId;
+
+    if (!sessionId) {
+      return reply.code(401).send({ message: 'Invalid session' });
+    }
+
+    await knex('sessions').where({ token: sessionId }).delete();
+
+    reply.clearCookie('sessionId', {
+      path: '/',
+    });
+
+    return reply.code(200).send({ message: 'Logout success' });
+  });
 }
