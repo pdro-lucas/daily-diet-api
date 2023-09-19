@@ -29,7 +29,9 @@ Siga estas etapas para instalar e configurar a aplicação em sua máquina local
 1. Clone este repositório.
 2. Execute `npm install` para instalar as dependências.
 3. Configure as variáveis de ambiente.
-4. Execute `npm start` para iniciar o servidor.
+4. Execute `npm run knex migrate:latest` para executar as migrações do banco de dados.
+5. Execute `npm run build` para compilar a aplicação.
+6. Execute `npm start` para iniciar o servidor.
 
 ## Uso
 
