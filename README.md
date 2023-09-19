@@ -20,7 +20,7 @@ Esta aplicação foi desenvolvida utilizando as seguintes tecnologias e framewor
 - [Node.js](https://nodejs.org/): Ambiente de execução JavaScript no servidor.
 - [Fastify](https://www.fastify.io/): Framework web para Node.js.
 - [Knex.js](http://knexjs.org/): Construtor de consultas SQL para Node.js.
-- [Slite3](https://www.sqlite.org/index.html): Banco de dados utilizado para armazenar as refeições e métricas.
+- [Sqlite3](https://www.sqlite.org/index.html): Banco de dados utilizado para armazenar as refeições e métricas.
 
 ## Instalação
 
